@@ -19,7 +19,7 @@ use App\Http\Controllers\Controller; // Import Controller đúng
 
 // Trang chủ
 Route::get('/', fn() => view('index'))->name('index');
-
+Route::view('/welcome', 'welcome')->name('welcome');
 // Các trang tĩnh khác
 Route::view('/header', 'header')->name('header');
 Route::view('/footer', 'footer')->name('footer');
