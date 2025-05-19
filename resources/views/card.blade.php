@@ -2,93 +2,93 @@
 
 @auth('thanhvien')
 <style>
-    /* CSS của bạn vẫn giữ nguyên */#product-prices {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    perspective: 1000px; /* tạo không gian 3D cho con bên trong */
-}
+    /* CSS của bạn vẫn giữ nguyên */
+    #product-prices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        perspective: 1000px; /* tạo không gian 3D cho con bên trong */
+    }
 
-.price-item {
-    background-color: #f9f9f9;
-    padding: 18px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 200px;
-    text-align: center;
-    min-width: 160px;
-    cursor: pointer;
-    transition: 
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 0.3s ease;
-    transform-style: preserve-3d;
-}
+    .price-item {
+        background-color: #f9f9f9;
+        padding: 18px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 200px;
+        text-align: center;
+        min-width: 160px;
+        cursor: pointer;
+        transition:
+            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            background-color 0.3s ease;
+        transform-style: preserve-3d;
+    }
 
-.price-item:hover {
-    background-color: #e6f0ff;
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
-    transform: translateZ(15px) scale(1.05) rotateX(3deg) rotateY(3deg);
-}
+    .price-item:hover {
+        background-color: #e6f0ff;
+        box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+        transform: translateZ(15px) scale(1.05) rotateX(3deg) rotateY(3deg);
+    }
 
-.selected {
-    border: 3px solid #007bff;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
-    background-color: #d0e4ff;
-    transform: translateZ(20px) scale(1.07);
-}
+    .selected {
+        border: 3px solid #007bff;
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+        background-color: #d0e4ff;
+        transform: translateZ(20px) scale(1.07);
+    }
 
-.cart-item {
-    margin-bottom: 15px;
-}
+    .cart-item {
+        margin-bottom: 15px;
+    }
 
-.cart-item input {
-    width: 60px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 5px;
-    transition: border-color 0.3s ease;
-}
+    .cart-item input {
+        width: 60px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 5px;
+        transition: border-color 0.3s ease;
+    }
 
-.cart-item input:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
+    .cart-item input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    }
 
-.cart-summary {
-    margin-top: 30px;
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: #333;
-}
+    .cart-summary {
+        margin-top: 30px;
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: #333;
+    }
 
-.btn-checkout {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    cursor: pointer;
-    margin-top: 25px;
-    border-radius: 10px;
-    font-weight: 600;
-    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.5);
-    transition: 
-        background-color 0.3s ease, 
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-}
+    .btn-checkout {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        cursor: pointer;
+        margin-top: 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 6px 12px rgba(40, 167, 69, 0.5);
+        transition:
+            background-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+    }
 
-.btn-checkout:hover {
-    background-color: #218838;
-    box-shadow: 0 10px 20px rgba(33, 136, 56, 0.7);
-    transform: translateY(-3px);
-}
-
+    .btn-checkout:hover {
+        background-color: #218838;
+        box-shadow: 0 10px 20px rgba(33, 136, 56, 0.7);
+        transform: translateY(-3px);
+    }
 
     .card-3d {
         display: block;
@@ -132,6 +132,7 @@
         margin: 0;
     }
 </style>
+
 <div class="container tabs-m1 mt-5">
     <ul class="nav nav-tabs justify-content-start mb-4">
         <li class="nav-item">
@@ -156,7 +157,6 @@
                                 </div>
                             </a>
                         </div>
-
                         @endforeach
                     </div>
                 </div>
@@ -248,7 +248,6 @@
                                         </div>
                                     </div>
 
-
                                     <!-- Các nút tìm kiếm và lọc -->
                                     <div class="col-12 col-md flex-lg-grow-0 d-flex align-items-center px-0">
                                         <button class="btn btn-primary btn-small text-nowrap m-1 my-md-0" type="submit" name="submit" value="filter">
@@ -308,6 +307,7 @@
         </div>
     </div>
 </div>
+
 @else
 <div class="container mt-5 mb-5">
     <div class="alert alert-warning text-center">
@@ -316,109 +316,114 @@
     </div>
 </div>
 @endauth
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     $(document).ready(function() {
-        // Tự động chọn nhà cung cấp có data-id="1" khi trang tải
-        var nhaCungCapId = "1"; // Lấy data-id là 1
+        // Lấy nhà cung cấp đầu tiên trong danh sách
+        var $firstProvider = $('a[data-id]').first();
 
-        // Mô phỏng click vào thẻ có data-id="1" và thêm lớp selected
-        $('a[data-id="' + nhaCungCapId + '"]').addClass('selected').trigger('click');
+        if ($firstProvider.length) {
+            // Thêm class selected cho nhà cung cấp đầu tiên
+            $firstProvider.addClass('selected');
 
-        // Lắng nghe sự kiện click của các nhà cung cấp
-        $('a[data-id]').on('click', function() {
-            var nhaCungCapId = $(this).data('id');
-            var providerName = $(this).find('.card-text').text(); // Lấy tên nhà cung cấp từ card-text
+            // Lấy id và tên nhà cung cấp đầu tiên
+            var nhaCungCapId = $firstProvider.data('id');
+            var providerName = $firstProvider.find('.card-text').text();
 
-            // Xóa giỏ hàng cũ khi chọn nhà cung cấp mới
-            $('#cart-empty-message').show();
-            $('#cart-details').hide(); // Ẩn giỏ hàng
-
-            // Gửi yêu cầu AJAX để lấy mệnh giá sản phẩm
+            // Gọi AJAX lấy mệnh giá sản phẩm nhà cung cấp đầu tiên
             $.ajax({
                 url: '/get-product-prices/' + nhaCungCapId,
                 method: 'GET',
                 success: function(response) {
-                    console.log(response); // Kiểm tra phản hồi từ server
-
-                    // Xóa nội dung cũ trước khi hiển thị mệnh giá mới
-                    $('#product-prices').html('');
-
-                    // Hiển thị mệnh giá sản phẩm vào phần #product-prices
+                    // Hiển thị mệnh giá sản phẩm
                     $('#product-prices').html(response.html);
                 },
                 error: function(xhr, status, error) {
-                    console.log("Error:", error); // Kiểm tra lỗi trong console
+                    console.log("Error:", error);
+                    alert('Có lỗi xảy ra!');
+                }
+            });
+        }
+
+        // Xử lý khi click chọn nhà cung cấp
+        $('a[data-id]').on('click', function() {
+            var nhaCungCapId = $(this).data('id');
+            var providerName = $(this).find('.card-text').text();
+
+            // Xóa giỏ hàng cũ
+            $('#cart-empty-message').show();
+            $('#cart-details').hide();
+
+            // Gọi AJAX lấy mệnh giá sản phẩm nhà cung cấp được chọn
+            $.ajax({
+                url: '/get-product-prices/' + nhaCungCapId,
+                method: 'GET',
+                success: function(response) {
+                    $('#product-prices').html(response.html);
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error:", error);
                     alert('Có lỗi xảy ra!');
                 }
             });
 
-            // Xóa lớp selected khỏi tất cả các thẻ
+            // Xóa class selected tất cả nhà cung cấp
             $('a[data-id]').removeClass('selected');
 
-            // Thêm lớp selected cho thẻ được click
+            // Thêm class selected cho nhà cung cấp được click
             $(this).addClass('selected');
         });
 
-        // Lắng nghe sự kiện click của mệnh giá
+        // Xử lý chọn mệnh giá
         $(document).on('click', '.price-item', function() {
-            // Xóa lớp selected khỏi tất cả các mệnh giá
             $('.price-item').removeClass('selected');
-
-            // Thêm lớp selected cho mệnh giá được click
             $(this).addClass('selected');
 
-            // Lấy thông tin mệnh giá và nhà cung cấp
-            var providerName = $('a.selected').find('.card-text').text(); // Lấy tên nhà cung cấp từ thẻ được chọn
-            var price = parseFloat($(this).data('price')); // Lấy giá mệnh giá từ data-price
-            var discount = parseFloat($(this).data('discount')); // Lấy chiết khấu từ data-discount
-            var idMatheCao = $(this).data('id-mathecao'); // Lấy id_mathecao từ data-id-mathecao
+            var providerName = $('a.selected').find('.card-text').text();
+            var price = parseFloat($(this).data('price'));
+            var discount = parseFloat($(this).data('discount'));
+            var idMatheCao = $(this).data('id-mathecao');
 
-            // Tính giá sau chiết khấu
-            var priceAfterDiscount = price - (price * discount / 100); // Áp dụng chiết khấu
+            var priceAfterDiscount = price - (price * discount / 100);
 
-            // Cập nhật giỏ hàng
             $('#cart-empty-message').hide();
             $('#cart-details').show();
             $('#cart-provider-name').text(providerName);
-            $('#cart-price').text(price.toFixed(0)); // Hiển thị mệnh giá
-            $('#cart-price-after-discount').text(priceAfterDiscount.toFixed(0)); // Hiển thị giá sau chiết khấu
-            $('#cart-discount').text(discount); // Hiển thị chiết khấu
-            $('#cart-total').text(priceAfterDiscount.toFixed(0)); // Hiển thị tổng cộng
+            $('#cart-price').text(price.toFixed(0));
+            $('#cart-price-after-discount').text(priceAfterDiscount.toFixed(0));
+            $('#cart-discount').text(discount);
+            $('#cart-total').text(priceAfterDiscount.toFixed(0));
 
-            // Cập nhật số lượng
-            $('#quantity').on('input', function() {
+            $('#quantity').off('input').on('input', function() {
                 var quantity = $(this).val();
                 var total = priceAfterDiscount * quantity;
-                $('#cart-total').text(total.toFixed(0)); // Cập nhật tổng cộng
+                $('#cart-total').text(total.toFixed(0));
             });
 
-            $('#checkout-button').on('click', function() {
-                // Lấy thông tin cần thiết
-                var providerName = $('a.selected').find('.card-text').text(); // Tên nhà cung cấp
-                var price = parseFloat($('.price-item.selected').data('price')); // Mệnh giá
-                var discount = parseFloat($('.price-item.selected').data('discount')); // Chiết khấu
-                var quantity = $('#quantity').val(); // Số lượng
-                var nhaCungCapId = $('a.selected').data('id'); // Lấy id nhà cung cấp từ thẻ đã chọn
+            $('#checkout-button').off('click').on('click', function() {
+                var providerName = $('a.selected').find('.card-text').text();
+                var price = parseFloat($('.price-item.selected').data('price'));
+                var discount = parseFloat($('.price-item.selected').data('discount'));
+                var quantity = $('#quantity').val();
+                var nhaCungCapId = $('a.selected').data('id');
 
-                // Tính giá sau chiết khấu
                 var priceAfterDiscount = price - (price * discount / 100);
 
-                // Tạo URL với các tham số cần thiết, bao gồm id_mathecao
                 var url = "{{ route('pay') }}?provider=" + encodeURIComponent(providerName) +
                     "&price=" + price +
                     "&discount=" + discount +
                     "&quantity=" + quantity +
                     "&priceAfterDiscount=" + priceAfterDiscount +
                     "&nhaCungCapId=" + nhaCungCapId +
-                    "&idMatheCao=" + idMatheCao; // Thêm id_mathecao vào URL
+                    "&idMatheCao=" + idMatheCao;
 
-                // Điều hướng đến trang thanh toán với các tham số
                 window.location.href = url;
             });
         });
     });
 </script>
+
 @include('partials.footer')
